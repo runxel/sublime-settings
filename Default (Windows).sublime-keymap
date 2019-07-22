@@ -1,0 +1,69 @@
+[
+	// shortcut taken from Eclipse for deleting a whole line
+	{ "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+
+	// needed because reassigned ctrl+d
+	{ "keys": ["ctrl+b"], "command": "find_under_expand" },
+
+	// fast build
+	{ "keys": ["ctrl+enter"], "command": "build" },
+
+	// reassigning for "add line" +++ convinient "add before"
+	{ "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
+	{ "keys": ["ctrl+alt+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
+
+
+	// nötig aufgrund des aktuellen Keyboardlayouts auf dem MSI, greift sich ähnlich wie vorher der Standard
+	{ "keys": ["ctrl+'"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+shift+'"], "command": "toggle_comment", "args": { "block": true } },
+
+	// shorter than ctrl+l
+	// but breaks the easy "repeat" command
+	// { "keys": ["ctrl+y"], "command": "expand_selection", "args": {"to": "line"} },
+
+	// sidebar should be reachable by left hand alone
+	// _actually_ this is not a goodp idea, because 'ctrl+S' becomes now a listener...
+	// listeners can'be exited prematurely
+	//{ "keys": ["ctrl+s", "ctrl+b"], "command": "toggle_side_bar" },
+
+	// get the project quick switch back
+	{ "keys": ["ctrl+shift+o"], "command": "prompt_select_workspace" },
+
+	// fast tab switching
+	{ "keys": ["alt+right"], "command": "next_view" },
+	{ "keys": ["alt+left"], "command": "prev_view" },
+
+	// reassign copy history
+	{ "keys": ["ctrl+h", "ctrl+v"], "command": "paste_from_history" },
+
+	// open console [ = ?
+	{ "keys": ["ctrl+shift+c"], "command": "show_panel", "args": {"panel": "console", "toggle": true} },
+
+	// open find+replace panel
+	{ "keys": ["ctrl+shift+f"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+
+	// reassign find in files
+	{ "keys": ["ctrl+alt+f"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+
+	// fast toggle Word Wrap
+	{ "keys": ["alt+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+
+	// to move cursor out of parentheses, quotes, brackets 
+	// tab alone works, but sometimes you indeed want a tab inserted
+	{ "keys": ["shift+tab"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
+		[
+        	{ "key": "following_text", "operator": "regex_contains", "operand": "^[)}'\"`\\]:]", "match_all": true },
+        	{ "key": "auto_complete_visible", "operator": "equal", "operand": false }
+	    ]   
+	},
+
+	// Title Case
+	{ "keys": ["ctrl+k", "ctrl+c"], "command": "title_case" },
+
+
+	// P L U G I N S //
+	{ "keys": ["ctrl+shift+f11"], "command": "distraction_free_window" }
+
+	// INFO //
+	// ctrl+ö  =>  console
+]

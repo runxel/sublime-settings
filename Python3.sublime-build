@@ -1,0 +1,6 @@
+{
+	"cmd":["D:\\Programme\\Miniconda2\\envs\\py3\\python.exe", "-u", "$file"],
+	"env": {"PYTHONIOENCODING": "utf8"},
+	"file_regex": "^[ ]File \"(...?)\", line ([0-9]*)",
+	"selector": "source.python"
+}
